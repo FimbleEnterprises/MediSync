@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FFD95AE0-773B-4DC0-9FC6-1D7E26DF1B92}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MediSync</RootNamespace>
+    <AssemblyName>MediSync</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Weber\OneDrive - Medistim USA Inc\CRM\MediSync\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MediSync.MainForm</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>ADD9575101AE1957F736FD729B53918B61A3A846</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MediSync_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="businesslogic, Version=1.0.6554.23593, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\businesslogic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency.1.9.2\lib\net45\ClientDependency.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency-Mvc5.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="cms, Version=1.0.6554.23593, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\cms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ConsoleEx, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ConsoleEx.1.0.4\lib\ConsoleEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="controls, Version=1.0.6554.23595, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CRMConnect, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CRMConnection.1.0.2\lib\CRMConnect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Examine, Version=0.1.88.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Examine.0.1.88\lib\net45\Examine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.5.6\lib\net45\ImageProcessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=4.8.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Web.4.8.7\lib\net45\ImageProcessor.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.6554.23582, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Konsole, Version=2.0.2.17316, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Goblinfactory.Konsole.3.1.0\lib\net45\Konsole.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Log4Net.Async, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Log4Net.Async.2.0.4\lib\net40\Log4Net.Async.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MarkdownSharp, Version=1.14.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdown.1.14.7\lib\net45\MarkdownSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Outlook.Sdk">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Crm.Outlook.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Tools.EmailProviders">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Crm.Tools.EmailProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.2\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Deployment">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.CrmConnectControl">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Xrm.Tooling.CrmConnectControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.CrmConnector.Powershell">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Xrm.Tooling.CrmConnector.Powershell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.PackageDeployment.Powershell">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Xrm.Tooling.PackageDeployment.Powershell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Ui.Styles">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Xrm.Tooling.Ui.Styles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.WebResourceUtility">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Xrm.Tooling.WebResourceUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.10\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PerrysNetConsole, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerrysNetConsole.1.2.0.1\lib\net45\PerrysNetConsole.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.5.0\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=3.1.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Console.3.1.1\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLCE4Umbraco, Version=1.0.6554.23595, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\SQLCE4Umbraco.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\System.Data.SqlServerCe.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement">
+      <HintPath>..\packages\CRMConnection.1.0.2\lib\System.DirectoryServices.AccountManagement.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security">
+      <HintPath>..\packages\CRMConnection.1.0.2\lib\System.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <HintPath>..\packages\CRMConnection.1.0.2\lib\System.ServiceModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.7.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\TidyNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco, Version=1.0.6554.23596, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\umbraco.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.6554.23584, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\Umbraco.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.6554.23591, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\umbraco.DataLayer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.6554.23601, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\umbraco.editorControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.6554.23601, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\umbraco.MacroEngines.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.6554.23595, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\umbraco.providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.6554.23602, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\Umbraco.Web.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.7.0.23594, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.7\lib\net45\UmbracoExamine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Change Default Dashboards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change Default Dashboards.Designer.cs">
+      <DependentUpon>Change Default Dashboards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsoleHelper.cs" />
+    <Compile Include="CrmConnection.cs" />
+    <Compile Include="CrmServiceHelpers.cs" />
+    <Compile Include="DbMonitor.cs" />
+    <Compile Include="EventsHelper.cs" />
+    <Compile Include="Form_AdditionalTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdditionalTools.Designer.cs">
+      <DependentUpon>Form_AdditionalTools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface1.cs" />
+    <Compile Include="JobList.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SettingsHelper.cs" />
+    <Compile Include="MainForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerConnection.cs" />
+    <EmbeddedResource Include="Change Default Dashboards.resx">
+      <DependentUpon>Change Default Dashboards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdditionalTools.resx">
+      <DependentUpon>Form_AdditionalTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SqlTypeParser.cs" />
+    <Compile Include="Utility.cs" />
+    <None Include="bin\coretools\CrmSvcUtil.exe.config" />
+    <None Include="bin\coretools\LicenseTerms.docx" />
+    <None Include="bin\Debug\ErrorLog.log" />
+    <None Include="bin\Debug\MediSync.application" />
+    <None Include="bin\Debug\MediSync.exe.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\MediSync.exe.manifest" />
+    <None Include="bin\Release\ErrorLog.log" />
+    <None Include="bin\Release\MediSync.7z" />
+    <None Include="bin\Release\MediSync.application" />
+    <None Include="bin\Release\MediSync.exe.config" />
+    <None Include="bin\Release\MediSync.exe.manifest" />
+    <None Include="MediSync_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\coretools\CrmSvcUtil.exe" />
+    <Content Include="bin\coretools\CrmSvcUtil.xml" />
+    <Content Include="bin\coretools\Microsoft.Crm.Sdk.Proxy.dll" />
+    <Content Include="bin\coretools\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
+    <Content Include="bin\coretools\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll" />
+    <Content Include="bin\coretools\Microsoft.Xrm.Sdk.Deployment.dll" />
+    <Content Include="bin\coretools\Microsoft.Xrm.Sdk.dll" />
+    <Content Include="bin\coretools\Microsoft.Xrm.Tooling.Connector.dll" />
+    <Content Include="bin\coretools\Microsoft.Xrm.Tooling.CrmConnectControl.dll" />
+    <Content Include="bin\coretools\Microsoft.Xrm.Tooling.Ui.Styles.dll" />
+    <Content Include="bin\coretools\Other Redistributable.txt" />
+    <Content Include="bin\coretools\SolutionPackager.exe" />
+    <Content Include="bin\Debug\AutoMapper.dll" />
+    <Content Include="bin\Debug\AutoMapper.Net4.dll" />
+    <Content Include="bin\Debug\AutoMapper.Net4.pdb" />
+    <Content Include="bin\Debug\AutoMapper.pdb" />
+    <Content Include="bin\Debug\AutoMapper.xml" />
+    <Content Include="bin\Debug\businesslogic.dll" />
+    <Content Include="bin\Debug\businesslogic.xml" />
+    <Content Include="bin\Debug\ClientDependency.Core.dll" />
+    <Content Include="bin\Debug\ClientDependency.Core.Mvc.dll" />
+    <Content Include="bin\Debug\ClientDependency.Core.Mvc.pdb" />
+    <Content Include="bin\Debug\ClientDependency.Core.pdb" />
+    <Content Include="bin\Debug\cms.dll" />
+    <Content Include="bin\Debug\cms.xml" />
+    <Content Include="bin\Debug\ConsoleEx.dll" />
+    <Content Include="bin\Debug\controls.dll" />
+    <Content Include="bin\Debug\controls.xml" />
+    <Content Include="bin\Debug\Credentials.xml" />
+    <Content Include="bin\Debug\CRM ToDO.txt" />
+    <Content Include="bin\Debug\CRMConnect.dll" />
+    <Content Include="bin\Debug\Examine.dll" />
+    <Content Include="bin\Debug\Examine.pdb" />
+    <Content Include="bin\Debug\HtmlAgilityPack.dll" />
+    <Content Include="bin\Debug\HtmlAgilityPack.pdb" />
+    <Content Include="bin\Debug\HtmlAgilityPack.xml" />
+    <Content Include="bin\Debug\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\Debug\ImageProcessor.dll" />
+    <Content Include="bin\Debug\ImageProcessor.Web.dll" />
+    <Content Include="bin\Debug\ImageProcessor.Web.xml" />
+    <Content Include="bin\Debug\ImageProcessor.xml" />
+    <Content Include="bin\Debug\interfaces.dll" />
+    <Content Include="bin\Debug\interfaces.xml" />
+    <Content Include="bin\Debug\Konsole.dll" />
+    <Content Include="bin\Debug\Log4Net.Async.dll" />
+    <Content Include="bin\Debug\log4net.dll" />
+    <Content Include="bin\Debug\Lucene.Net.dll" />
+    <Content Include="bin\Debug\Lucene.Net.xml" />
+    <Content Include="bin\Debug\MarkdownSharp.dll" />
+    <Content Include="bin\Debug\MediSync.exe" />
+    <Content Include="bin\Debug\MediSync.pdb" />
+    <Content Include="bin\Debug\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNet.SignalR.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.SignalR.Core.xml" />
+    <Content Include="bin\Debug\Microsoft.Crm.Outlook.Sdk.dll" />
+    <Content Include="bin\Debug\Microsoft.Crm.Sdk.Proxy.dll" />
+    <Content Include="bin\Debug\Microsoft.Crm.Tools.EmailProviders.dll" />
+    <Content Include="bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
+    <Content Include="bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll" />
+    <Content Include="bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <Content Include="bin\Debug\Microsoft.IO.RecyclableMemoryStream.pdb" />
+    <Content Include="bin\Debug\Microsoft.Owin.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Debug\Microsoft.Owin.xml" />
+    <Content Include="bin\Debug\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll" />
+    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.dll" />
+    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll" />
+    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.Connector.dll" />
+    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.CrmConnectControl.dll" />
+    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.CrmConnector.Powershell.dll" />
+    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.PackageDeployment.Powershell.dll" />
+    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.Ui.Styles.dll" />
+    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.WebResourceUtility.dll" />
+    <Content Include="bin\Debug\MiniProfiler.dll" />
+    <Content Include="bin\Debug\MiniProfiler.pdb" />
+    <Content Include="bin\Debug\MiniProfiler.xml" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\NEW\Microsoft.Crm.Sdk.dll" />
+    <Content Include="bin\Debug\NEW\Microsoft.Crm.Sdk.Proxy.dll" />
+    <Content Include="bin\Debug\NEW\Microsoft.Xrm.Sdk.dll" />
+    <Content Include="bin\Debug\OLD\Microsoft.Xrm.Sdk.dll" />
+    <Content Include="bin\Debug\Owin.dll" />
+    <Content Include="bin\Debug\PerrysNetConsole.dll" />
+    <Content Include="bin\Debug\Semver.dll" />
+    <Content Include="bin\Debug\Serilog.dll" />
+    <Content Include="bin\Debug\Serilog.Sinks.Console.dll" />
+    <Content Include="bin\Debug\Serilog.Sinks.Console.xml" />
+    <Content Include="bin\Debug\Serilog.xml" />
+    <Content Include="bin\Debug\SQLCE4Umbraco.dll" />
+    <Content Include="bin\Debug\SQLCE4Umbraco.xml" />
+    <Content Include="bin\Debug\System.Data.SqlServerCe.dll" />
+    <Content Include="bin\Debug\System.Data.SqlServerCe.Entity.dll" />
+    <Content Include="bin\Debug\System.DirectoryServices.AccountManagement.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\Debug\System.Security.dll" />
+    <Content Include="bin\Debug\System.ServiceModel.dll" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Dataflow.dll" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Dataflow.xml" />
+    <Content Include="bin\Debug\System.Web.Helpers.dll" />
+    <Content Include="bin\Debug\System.Web.Helpers.xml" />
+    <Content Include="bin\Debug\System.Web.Http.dll" />
+    <Content Include="bin\Debug\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\Debug\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\Debug\System.Web.Http.xml" />
+    <Content Include="bin\Debug\System.Web.Mvc.dll" />
+    <Content Include="bin\Debug\System.Web.Mvc.xml" />
+    <Content Include="bin\Debug\System.Web.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.xml" />
+    <Content Include="bin\Debug\TidyNet.dll" />
+    <Content Include="bin\Debug\Umbraco.Core.dll" />
+    <Content Include="bin\Debug\Umbraco.Core.xml" />
+    <Content Include="bin\Debug\umbraco.DataLayer.dll" />
+    <Content Include="bin\Debug\umbraco.DataLayer.xml" />
+    <Content Include="bin\Debug\umbraco.dll" />
+    <Content Include="bin\Debug\umbraco.editorControls.dll" />
+    <Content Include="bin\Debug\umbraco.editorControls.xml" />
+    <Content Include="bin\Debug\umbraco.MacroEngines.dll" />
+    <Content Include="bin\Debug\umbraco.MacroEngines.xml" />
+    <Content Include="bin\Debug\umbraco.providers.dll" />
+    <Content Include="bin\Debug\umbraco.providers.xml" />
+    <Content Include="bin\Debug\Umbraco.Web.UI.dll" />
+    <Content Include="bin\Debug\Umbraco.Web.UI.xml" />
+    <Content Include="bin\Debug\umbraco.xml" />
+    <Content Include="bin\Debug\UmbracoExamine.dll" />
+    <Content Include="bin\Debug\UmbracoExamine.xml" />
+    <Content Include="bin\Release\app.publish\MediSync.exe" />
+    <Content Include="bin\Release\AutoMapper.dll" />
+    <Content Include="bin\Release\AutoMapper.Net4.dll" />
+    <Content Include="bin\Release\AutoMapper.Net4.pdb" />
+    <Content Include="bin\Release\AutoMapper.pdb" />
+    <Content Include="bin\Release\AutoMapper.xml" />
+    <Content Include="bin\Release\businesslogic.dll" />
+    <Content Include="bin\Release\businesslogic.xml" />
+    <Content Include="bin\Release\ClientDependency.Core.dll" />
+    <Content Include="bin\Release\ClientDependency.Core.Mvc.dll" />
+    <Content Include="bin\Release\ClientDependency.Core.Mvc.pdb" />
+    <Content Include="bin\Release\ClientDependency.Core.pdb" />
+    <Content Include="bin\Release\cms.dll" />
+    <Content Include="bin\Release\cms.xml" />
+    <Content Include="bin\Release\ConsoleEx.dll" />
+    <Content Include="bin\Release\controls.dll" />
+    <Content Include="bin\Release\controls.xml" />
+    <Content Include="bin\Release\Credentials.xml" />
+    <Content Include="bin\Release\CRMConnect.dll" />
+    <Content Include="bin\Release\Examine.dll" />
+    <Content Include="bin\Release\Examine.pdb" />
+    <Content Include="bin\Release\HtmlAgilityPack.dll" />
+    <Content Include="bin\Release\HtmlAgilityPack.pdb" />
+    <Content Include="bin\Release\HtmlAgilityPack.xml" />
+    <Content Include="bin\Release\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\Release\ImageProcessor.dll" />
+    <Content Include="bin\Release\ImageProcessor.Web.dll" />
+    <Content Include="bin\Release\ImageProcessor.Web.xml" />
+    <Content Include="bin\Release\ImageProcessor.xml" />
+    <Content Include="bin\Release\interfaces.dll" />
+    <Content Include="bin\Release\interfaces.xml" />
+    <Content Include="bin\Release\Konsole.dll" />
+    <Content Include="bin\Release\Log4Net.Async.dll" />
+    <Content Include="bin\Release\log4net.dll" />
+    <Content Include="bin\Release\Lucene.Net.dll" />
+    <Content Include="bin\Release\Lucene.Net.xml" />
+    <Content Include="bin\Release\MarkdownSharp.dll" />
+    <Content Include="bin\Release\MediSync.exe" />
+    <Content Include="bin\Release\MediSync.pdb" />
+    <Content Include="bin\Release\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="bin\Release\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Release\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Release\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Release\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Release\Microsoft.AspNet.SignalR.Core.dll" />
+    <Content Include="bin\Release\Microsoft.AspNet.SignalR.Core.xml" />
+    <Content Include="bin\Release\Microsoft.Crm.Outlook.Sdk.dll" />
+    <Content Include="bin\Release\Microsoft.Crm.Outlook.Sdk.xml" />
+    <Content Include="bin\Release\Microsoft.Crm.Sdk.Proxy.dll" />
+    <Content Include="bin\Release\Microsoft.Crm.Sdk.Proxy.xml" />
+    <Content Include="bin\Release\Microsoft.Crm.Tools.EmailProviders.dll" />
+    <Content Include="bin\Release\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
+    <Content Include="bin\Release\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll" />
+    <Content Include="bin\Release\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <Content Include="bin\Release\Microsoft.IO.RecyclableMemoryStream.pdb" />
+    <Content Include="bin\Release\Microsoft.Owin.dll" />
+    <Content Include="bin\Release\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Release\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Release\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Release\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Release\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Release\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Release\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Release\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Release\Microsoft.Owin.xml" />
+    <Content Include="bin\Release\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Sdk.Deployment.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Sdk.Deployment.xml" />
+    <Content Include="bin\Release\Microsoft.Xrm.Sdk.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Sdk.Workflow.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Sdk.Workflow.xml" />
+    <Content Include="bin\Release\Microsoft.Xrm.Sdk.xml" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.Connector.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.Connector.xml" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.CrmConnectControl.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.CrmConnectControl.xml" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.CrmConnector.Powershell.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.CrmConnector.Powershell.xml" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.PackageDeployment.Powershell.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.Ui.Styles.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.WebResourceUtility.dll" />
+    <Content Include="bin\Release\Microsoft.Xrm.Tooling.WebResourceUtility.xml" />
+    <Content Include="bin\Release\MiniProfiler.dll" />
+    <Content Include="bin\Release\MiniProfiler.pdb" />
+    <Content Include="bin\Release\MiniProfiler.xml" />
+    <Content Include="bin\Release\MySql.Data.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.xml" />
+    <Content Include="bin\Release\Owin.dll" />
+    <Content Include="bin\Release\PerrysNetConsole.dll" />
+    <Content Include="bin\Release\Semver.dll" />
+    <Content Include="bin\Release\Serilog.dll" />
+    <Content Include="bin\Release\Serilog.Sinks.Console.dll" />
+    <Content Include="bin\Release\Serilog.Sinks.Console.xml" />
+    <Content Include="bin\Release\Serilog.xml" />
+    <Content Include="bin\Release\SQLCE4Umbraco.dll" />
+    <Content Include="bin\Release\SQLCE4Umbraco.xml" />
+    <Content Include="bin\Release\System.Data.SqlServerCe.dll" />
+    <Content Include="bin\Release\System.Data.SqlServerCe.Entity.dll" />
+    <Content Include="bin\Release\System.DirectoryServices.AccountManagement.dll" />
+    <Content Include="bin\Release\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\Release\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\Release\System.Security.dll" />
+    <Content Include="bin\Release\System.ServiceModel.dll" />
+    <Content Include="bin\Release\System.Threading.Tasks.Dataflow.dll" />
+    <Content Include="bin\Release\System.Threading.Tasks.Dataflow.xml" />
+    <Content Include="bin\Release\System.Web.Helpers.dll" />
+    <Content Include="bin\Release\System.Web.Helpers.xml" />
+    <Content Include="bin\Release\System.Web.Http.dll" />
+    <Content Include="bin\Release\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\Release\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\Release\System.Web.Http.xml" />
+    <Content Include="bin\Release\System.Web.Mvc.dll" />
+    <Content Include="bin\Release\System.Web.Mvc.xml" />
+    <Content Include="bin\Release\System.Web.Razor.dll" />
+    <Content Include="bin\Release\System.Web.Razor.xml" />
+    <Content Include="bin\Release\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\Release\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\Release\System.Web.WebPages.dll" />
+    <Content Include="bin\Release\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\Release\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\Release\System.Web.WebPages.xml" />
+    <Content Include="bin\Release\TidyNet.dll" />
+    <Content Include="bin\Release\Umbraco.Core.dll" />
+    <Content Include="bin\Release\Umbraco.Core.xml" />
+    <Content Include="bin\Release\umbraco.DataLayer.dll" />
+    <Content Include="bin\Release\umbraco.DataLayer.xml" />
+    <Content Include="bin\Release\umbraco.dll" />
+    <Content Include="bin\Release\umbraco.editorControls.dll" />
+    <Content Include="bin\Release\umbraco.editorControls.xml" />
+    <Content Include="bin\Release\umbraco.MacroEngines.dll" />
+    <Content Include="bin\Release\umbraco.MacroEngines.xml" />
+    <Content Include="bin\Release\umbraco.providers.dll" />
+    <Content Include="bin\Release\umbraco.providers.xml" />
+    <Content Include="bin\Release\Umbraco.Web.UI.dll" />
+    <Content Include="bin\Release\Umbraco.Web.UI.xml" />
+    <Content Include="bin\Release\umbraco.xml" />
+    <Content Include="bin\Release\UmbracoExamine.dll" />
+    <Content Include="bin\Release\UmbracoExamine.xml" />
+    <Content Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+</Project>

@@ -1,0 +1,67 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MediSync.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AXConnString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=gu-sxd7e-025\AX;Initial Catalog=MicrosoftDynamicsAX;Persist Security Info=True;User ID=gu51;Password=WeberVPN</Value>
+    </Setting>
+    <Setting Name="DbUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">gu51</Value>
+    </Setting>
+    <Setting Name="DbPass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">WeberVPN</Value>
+    </Setting>
+    <Setting Name="CrmProdUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://gu-sxd7e-019/Medistim/</Value>
+    </Setting>
+    <Setting Name="DefaultCrmServerChoice" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="GetJobListQuery" Type="System.String" Scope="User">
+      <Value Profile="(Default)">					SELECT 
+					   [msus_medisyncId]
+					  ,[CreatedOn]
+					  ,[CreatedBy]
+					  ,[ModifiedOn]
+					  ,[ModifiedBy]
+					  ,[CreatedOnBehalfBy]
+					  ,[ModifiedOnBehalfBy]
+					  ,[OwnerId]
+					  ,[OwnerIdType]
+					  ,[OwningBusinessUnit]
+					  ,[statecode]
+					  ,[statuscode]
+					  ,[VersionNumber]
+					  ,[ImportSequenceNumber]
+					  ,[OverriddenCreatedOn]
+					  ,[TimeZoneRuleVersionNumber]
+					  ,[UTCConversionTimeZoneCode]
+					  ,[msus_name]
+					  ,[msus_Enabled]
+					  ,[msus_Interval]
+					  ,[msus_Lastrun]
+					  ,[msus_LastRunSuccessful]
+					  ,[msus_Priority]
+					  ,[msus_Runasuser]
+					  ,[msus_Runasuserpassword]
+					  ,[new_Targetentity]
+                                                                                  ,[msus_target_entity_alias]
+					  ,[new_AXjoincolumn]
+					  ,[new_CRMjoincolumn]
+					  ,[new_AXTargetCols]
+					  ,[new_CRMTargetCols]
+					  ,[new_CRMJoinTable]
+					  ,[new_AXJoinTable]
+					  ,[msus_lastrun_utc]
+                      ,[msus_FromClause]
+					  ,[msus_axdatecolumn]
+					FROM [msus_medisyncBase]</Value>
+    </Setting>
+    <Setting Name="CRMConnString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=gu-sxd7e-025\CRM;Initial Catalog=Medistim_MSCRM;Persist Security Info=True;User ID=gu51;Password=WeberVPN</Value>
+    </Setting>
+    <Setting Name="CrmDbQualifyingPrefix" Type="System.String" Scope="User">
+      <Value Profile="(Default)">[CRM].Medistim_MSCRM.[dbo]</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
